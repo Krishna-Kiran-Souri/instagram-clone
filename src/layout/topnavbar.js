@@ -147,7 +147,7 @@ export const TopNavbar = () => {
           <IconButton>
             <FavoriteBorderIcon />
           </IconButton>
-          <Avatar src="https://cdn.britannica.com/s:700x500/89/149189-050-68D7613E/Bengal-tiger.jpg" />
+          <Avatar src="https://images.unsplash.com/photo-1570264013623-796051486fc6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max" />
         </div>
       </Toolbar>
     </AppBar>
