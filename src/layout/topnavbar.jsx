@@ -9,7 +9,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
-import "./topnavbar.css";
+
 import { fade, makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import InsertCommentSharpIcon from "@material-ui/icons/InsertCommentSharp";

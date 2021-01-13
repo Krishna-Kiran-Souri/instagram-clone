@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { TopNavbar } from "./topnavbar.js";
-import { TopNavBarMobile } from "./topnavbarmobile.js";
+import { TopNavbar } from "./topnavbar.jsx";
+import { TopNavBarMobile } from "./topnavbarmobile.jsx";
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
