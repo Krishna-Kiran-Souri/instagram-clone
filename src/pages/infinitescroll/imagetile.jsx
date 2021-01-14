@@ -27,26 +27,34 @@ export const ImageTiles = props => {
   const fetchPhotos = async pageNumber => {
     const ACCESS_KEY = "1nzzDPNsXTV-rn7FHQbFXbPWdgECj5Mp5zG1K5_-gHY";
     const res = await fetch(
-      `https://api.unsplash.com/search/photos?query=instagram&client_id=${ACCESS_KEY}&page=${pageNumber}&per_page=10`
+      `https://api.unsplash.com/search/photos?query=instagram&client_id=${ACCESS_KEY}&page=${pageNumber}&per_page=12`
     );
     const data = await res.json();
     // console.log(data);
-    setImages(data.results);
+    let temp = data.results.map((img, index) => {
+      let col = 1;
+      if (index % 2 === 0) {
+        col = 2;
+      }
+      return { url: img.urls.small, col: col };
+    });
+    console.log(temp);
+    setImages(temp);
   };
   useEffect(() => {
     fetchPhotos(pageNumber);
   }, [pageNumber]);
 
   // const imageTiles=
-  console.log(images.map(tile => tile.urls.regular));
+
   return (
     // <h1 />
     // <h1>{images.map(tile=>tile)}</h1>
     <div className={classes.root}>
       <GridList cellHeight={160} className={classes.gridList} cols={3}>
         {images.map((tile, index) => (
-          <GridListTile key={index} cols={tile.cols || 1}>
-            <img src={tile.urls.regular} alt={tile.title} />
+          <GridListTile key={index} cols={tile.col || 1}>
+            <img src={tile.url} alt={tile.title} />
           </GridListTile>
         ))}
       </GridList>
