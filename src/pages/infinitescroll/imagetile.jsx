@@ -38,10 +38,6 @@ export const ImageTiles = props => {
         col = 3;
         row = 3;
       }
-      if (index % 7 === 0) {
-        row = 2;
-        col = 1;
-      }
 
       return { url: img.urls.small, col: col, row: row };
     });
