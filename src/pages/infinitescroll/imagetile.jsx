@@ -32,11 +32,18 @@ export const ImageTiles = props => {
     const data = await res.json();
     // console.log(data);
     let temp = data.results.map((img, index) => {
+      let row = 1;
       let col = 1;
-      if (index % 2 === 0) {
+      if (index === 0) {
+        col = 3;
+        row = 3;
+      }
+      if (index % 7 === 0) {
+        row = 2;
         col = 2;
       }
-      return { url: img.urls.small, col: col };
+
+      return { url: img.urls.small, col: col, row: row };
     });
     console.log(temp);
     setImages(temp);
@@ -53,7 +60,7 @@ export const ImageTiles = props => {
     <div className={classes.root}>
       <GridList cellHeight={160} className={classes.gridList} cols={3}>
         {images.map((tile, index) => (
-          <GridListTile key={index} cols={tile.col || 1}>
+          <GridListTile key={index} cols={tile.col || 1} rows={tile.row}>
             <img src={tile.url} alt={tile.title} />
           </GridListTile>
         ))}
