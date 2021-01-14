@@ -11,11 +11,16 @@ const useStyles = makeStyles(theme => ({
     flexWrap: "wrap",
     justifyContent: "space-around",
     overflow: "hidden",
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
+    marginTop: "20px",
+    height: "100vh"
   },
   gridList: {
     width: 500,
-    height: 450
+    height: 700,
+    position: "realtive",
+    marginTop: "50px",
+    paddingTop: "50px"
   }
 }));
 
@@ -45,12 +50,14 @@ export const ImageTiles = props => {
       return { url: img.urls.small, col: col, row: row };
     });
     console.log(temp);
-    setImages(temp);
+    setImages(p => [...p, ...temp]);
   };
   useEffect(() => {
     fetchPhotos(pageNumber);
   }, [pageNumber]);
-
+  const loadMore = () => {
+    setPageNumber(prevpagenumber => prevpagenumber + 1);
+  };
   // const imageTiles=
 
   return (
