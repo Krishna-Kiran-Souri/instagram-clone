@@ -37,7 +37,7 @@ export const ImageTiles = props => {
       if (index === 0) {
         col = 3;
         row = 2;
-      } else if (index % 5 === 0) {
+      } else if (index % 7 === 0) {
         col = 1;
         row = 2;
       }
