@@ -40,7 +40,7 @@ export const ImageTiles = props => {
       }
       if (index % 7 === 0) {
         row = 2;
-        col = 2;
+        col = 1;
       }
 
       return { url: img.urls.small, col: col, row: row };
