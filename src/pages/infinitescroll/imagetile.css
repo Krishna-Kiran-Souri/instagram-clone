@@ -1,7 +1,7 @@
-.grid-list{
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none; 
+.grid-list {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 }
-.grid-list::-webkit-scrollbar{
-  display:none;
+.grid-list::-webkit-scrollbar {
+  display: none;
 }

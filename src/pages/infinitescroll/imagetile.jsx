@@ -72,7 +72,7 @@ export const ImageTiles = props => {
         cols={3}
       >
         {images.map((tile, index) => (
-          <GridListTile key={index} cols={tile.col || 1} rows={tile.row}>
+          <GridListTile key={index} cols={tile.col || 1} rows={tile.row} spacing={10}>
             <img src={tile.url} alt={tile.title} />
           </GridListTile>
         ))}
