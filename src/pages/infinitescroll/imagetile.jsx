@@ -21,7 +21,8 @@ const useStyles = makeStyles(theme => ({
     position: "realtive",
     marginTop: "50px",
     paddingTop: "50px",
-    width: "100vw"
+    width: "100vw",
+    overFlowY: "hidden"
   }
 }));
 
@@ -65,7 +66,11 @@ export const ImageTiles = props => {
     // <h1 />
     // <h1>{images.map(tile=>tile)}</h1>
     <div className={classes.root + " imagegrid"}>
-      <GridList cellHeight={160} className={classes.gridList} cols={3}>
+      <GridList
+        cellHeight={160}
+        className={classes.gridList + " grid-list"}
+        cols={3}
+      >
         {images.map((tile, index) => (
           <GridListTile key={index} cols={tile.col || 1} rows={tile.row}>
             <img src={tile.url} alt={tile.title} />
