@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import LinearBuffer from "../../utl/components/linearloading.jsx";
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -13,8 +13,7 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden",
     backgroundColor: theme.palette.background.paper,
     marginTop: "20px",
-    height: 100,
-    width: 100
+    height: "100vh"
   },
   gridList: {
     width: 500,
@@ -29,7 +28,7 @@ export const ImageTiles = props => {
   const classes = useStyles();
   const [images, setImages] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
-  const [loading, setLoading] = useState(false);
+
   const fetchPhotos = async pageNumber => {
     const ACCESS_KEY = "1nzzDPNsXTV-rn7FHQbFXbPWdgECj5Mp5zG1K5_-gHY";
     const res = await fetch(
