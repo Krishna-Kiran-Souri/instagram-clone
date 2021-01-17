@@ -44,9 +44,6 @@ export const ImageTiles = props => {
       if (index === 0) {
         col = 3;
         row = 2;
-      } else if (index % 7 === 0) {
-        col = 1;
-        row = 2;
       }
 
       return { url: img.urls.small, col: col, row: row };
@@ -72,7 +69,12 @@ export const ImageTiles = props => {
         cols={3}
       >
         {images.map((tile, index) => (
-          <GridListTile key={index} cols={tile.col || 1} rows={tile.row} spacing={10}>
+          <GridListTile
+            key={index}
+            cols={tile.col || 1}
+            rows={tile.row}
+            spacing={10}
+          >
             <img src={tile.url} alt={tile.title} />
           </GridListTile>
         ))}
