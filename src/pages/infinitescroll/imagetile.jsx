@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import CircularIndeterminate from "../../utl/components/circularspinner.jsx";
+import Mason from "react-stone-mason";
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -64,12 +65,19 @@ export const ImageTiles = props => {
     setPageNumber(prevpagenumber => prevpagenumber + 1);
     setLoading(true);
   };
-  const breakpointColumnsObj = {
-    default: 6,
-    1200: 3,
-    992: 3,
-    768: 2,
-    576: 1
+  const columnConfig = {
+    small: {
+      query: "(max-width: 720px)",
+      columns: 2
+    },
+    medium: {
+      query: "(min-width: calc(721px)) and (max-width: calc(1022px) )",
+      columns: 3
+    },
+    large: {
+      query: "(min-width: 1023px)",
+      columns: 4
+    }
   };
   // const imageTiles=
 
