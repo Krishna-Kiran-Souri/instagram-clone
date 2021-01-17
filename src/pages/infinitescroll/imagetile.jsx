@@ -1,6 +1,6 @@
 import { useImageService } from "../../service/imageservice.js";
 import React, { useState, useEffect } from "react";
-
+import "./imagetile.css";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
@@ -20,7 +20,8 @@ const useStyles = makeStyles(theme => ({
     height: 700,
     position: "realtive",
     marginTop: "50px",
-    paddingTop: "50px"
+    paddingTop: "50px",
+    width: "100vw"
   }
 }));
 
@@ -63,7 +64,7 @@ export const ImageTiles = props => {
   return (
     // <h1 />
     // <h1>{images.map(tile=>tile)}</h1>
-    <div className={classes.root}>
+    <div className={classes.root + " imagegrid"}>
       <GridList cellHeight={160} className={classes.gridList} cols={3}>
         {images.map((tile, index) => (
           <GridListTile key={index} cols={tile.col || 1} rows={tile.row}>
