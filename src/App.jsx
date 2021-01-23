@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Divider from "@material-ui/core/Divider";
 import { Layout } from "./layout";
 import { ImageTiles } from "./pages/infinitescroll/imagetile.jsx";
 import { makeStyles } from "@material-ui/core/styles";
@@ -9,25 +10,28 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "rgba(230,230,230,0.7)"
   },
   carousel: {
-    paddingTop: "0",
-    width: "40vw",
-    height: "20vh",
+    padding: "2rem",
+    width: "50vw",
+    height: "10vh",
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    position: "sticky",
+
     top: "10%",
     objectFit: "cover",
+    border: "rgba(0,0,0,0.6)",
     [theme.breakpoints.down("sm")]: {
-      top: "10%",
+      top: "rem",
+      padding: "1rem",
       width: "100%",
       alignItems: "center",
       justifyContent: "center",
       textAlign: "center",
-      position: "sticky"
+      position: "relative"
     }
   },
   feed: {
@@ -47,9 +51,11 @@ export default function App() {
   return (
     <div className={classes.root}>
       <Layout />
+
       <section className={classes.carousel}>
         <AvatarCarousel />
       </section>
+
       <section className={classes.feed}>{"feed"}</section>
     </div>
   );

@@ -7,7 +7,7 @@ import { StyledSliderWrapper, StyledSlider } from "./SliderStyles";
 
 const numberOfSlides = (maxVisibleSlides, windowWidth) => {
   if (windowWidth > 1200) return maxVisibleSlides;
-  if (windowWidth > 992) return 5;
+  if (windowWidth > 992) return 8;
   if (windowWidth > 768) return 5;
   return 4;
 };
