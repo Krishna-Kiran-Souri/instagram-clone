@@ -3,6 +3,7 @@ import "./style.css";
 import { Layout } from "./layout";
 import { ImageTiles } from "./pages/infinitescroll/imagetile.jsx";
 import { makeStyles } from "@material-ui/core/styles";
+import AvatarCarousel from "./pages/avatarcarousel/avatarcarousel.jsx";
 const useStyles = makeStyles(theme => ({
   feed: {
     paddingTop: 20,
@@ -22,7 +23,7 @@ export default function App() {
     <div>
       <Layout />
       <div className={classes.feed}>
-        <ImageTiles />
+        <AvatarCarousel />
       </div>
     </div>
   );
