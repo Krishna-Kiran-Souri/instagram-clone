@@ -7,9 +7,9 @@ import { StyledSliderWrapper, StyledSlider } from "./SliderStyles";
 
 const numberOfSlides = (maxVisibleSlides, windowWidth) => {
   if (windowWidth > 1200) return maxVisibleSlides;
-  if (windowWidth > 992) return 4;
-  if (windowWidth > 768) return 3;
-  return 2;
+  if (windowWidth > 992) return 5;
+  if (windowWidth > 768) return 5;
+  return 4;
 };
 
 const Slider = ({
@@ -60,9 +60,10 @@ const Slider = ({
     setCurrentPage(currentPage + (forward ? 1 : -1));
 
     if (sliderRef.current)
-      sliderRef.current.style.transform = `translate3D(-${(currentPage +
+      sliderRef.current.style.transform = `translate3D(-${((currentPage +
         (forward ? 1 : -1)) *
-        scrollSize}px, 0, 0)`;
+        scrollSize) /
+        2}px, 0, 0)`;
   };
 
   const handleMouseOver = id => {

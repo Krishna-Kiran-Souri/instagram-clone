@@ -2,8 +2,6 @@ import React from "react";
 // Styles
 import { StyledSliderItem } from "./SliderItemStyles";
 
-t;
-
 const SliderItem = ({
   slideMargin,
   visibleSlides,

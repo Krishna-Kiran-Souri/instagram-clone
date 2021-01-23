@@ -4,26 +4,26 @@ import { StyledSliderItem } from "./SliderItemStyles";
 export const StyledSliderWrapper = styled.div`
   overflow: hidden;
   position: relative;
-  background: #111;
-  padding: ${props => (props.zoomFactor / props.visibleSlides) * 0.7 + "%"} 0;
+  background: rgba(255, 255, 255, 1);
+  padding: ${props =>
+      (props.zoomFactor / (2 * props.visibleSlides)) * 0.7 + "%"}
+    0;
   .button-wrapper {
     position: absolute;
     width: 55px;
     height: 100%;
     top: 0;
-    padding: ${props => props.zoomFactor / 7 + "%"} 0;
+    padding: ${props => props.zoomFactor / 70 + "%"} 0;
     box-sizing: border-box;
   }
   .button {
     display: block;
-    background: rgb(0, 0, 0, 0.7);
+    background: rgb(255, 255, 255, 0.6);
     border: 0;
     top: 0;
     width: 100%;
     height: 100%;
     color: #fff;
-    font-size: 3rem;
-    font-weight: 800;
     cursor: pointer;
     outline: none;
     transition: all 0.7s;
@@ -34,11 +34,9 @@ export const StyledSliderWrapper = styled.div`
   }
   .back {
     left: 0;
-    border-radius: 0 1.5vw 1.5vw 0;
   }
   .forward {
     right: 0;
-    border-radius: 1.5vw 0 0 1.5vw;
   }
 `;
 
