@@ -5,6 +5,7 @@ import { Layout } from "./layout";
 import { ImageTiles } from "./pages/infinitescroll/imagetile.jsx";
 import { makeStyles } from "@material-ui/core/styles";
 import AvatarCarousel from "./pages/avatarcarousel/avatarcarousel.jsx";
+import RecipeReviewCard from "./pages/imagecards/imagecard.jsx";
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -25,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     objectFit: "cover",
     border: "rgba(0,0,0,0.6)",
     [theme.breakpoints.down("sm")]: {
-      top: "rem",
+      top: "3rem",
       padding: "1rem",
       width: "100%",
       alignItems: "center",
@@ -56,7 +57,9 @@ export default function App() {
         <AvatarCarousel />
       </section>
 
-      <section className={classes.feed}>{"feed"}</section>
+      <section className={classes.feed}>
+        <RecipeReviewCard />
+      </section>
     </div>
   );
 }

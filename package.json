@@ -8,6 +8,7 @@
     "@material-ui/icons": "4.11.2",
     "@mdi/js": "5.9.55",
     "@types/react": "17.0.0",
+    "clsx": "^1.1.1",
     "material-auto-rotating-carousel": "3.0.2",
     "prop-types": "^15.7.2",
     "react": "17.0.1",

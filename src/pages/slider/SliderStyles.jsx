@@ -5,6 +5,7 @@ export const StyledSliderWrapper = styled.div`
   overflow: hidden;
   position: relative;
   background: rgba(255, 255, 255, 1);
+  height: 3vh;
   padding: ${props =>
       (props.zoomFactor / (2 * props.visibleSlides)) * 0.7 + "%"}
     0;
